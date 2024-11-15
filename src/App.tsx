@@ -2,7 +2,7 @@ import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 
 export default function Mint() {
   return (
-    <div className="w-full p-5 flex lg:flex-row flex-col-reverse items-center justify-between ">
+    <div className="container mx-auto p-5 flex lg:flex-row flex-col-reverse items-center justify-between ">
       <div className="flex flex-col gap-2 max-w-lg">
         <div className="text-black text-2xl font-normal font-['Cardo']">
           Minting.

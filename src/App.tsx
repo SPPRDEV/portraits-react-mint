@@ -1,11 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
+import { CrossmintPaymentElement } from "@crossmint/client-sdk-react-ui";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "./components/ui/accordion";
+import { useState } from "react";
+import { Card } from "./components/ui/card";
+import { Button } from "./components/ui/button";
+import { Minus, Plus } from "lucide-react";
+
 
 const FeatureCard = ({
   title = "Title 01",
@@ -47,6 +52,21 @@ const FAQ = ({
 };
 
 export default function Mint() {
+  const [quantity, setQuantity] = useState(1);
+
+
+
+  const increment = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decrement = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
+
+
   return (
     <div className="min-h-screen pb-[80px]">
       <div className="container mx-auto p-5 flex lg:flex-row flex-col items-center justify-between ">
@@ -66,13 +86,54 @@ export default function Mint() {
             porro.
           </div>
           <div className="flex flex-col gap-4 mt-3">
-            <CrossmintPayButton
-              collectionId="69b57982-b9d1-4ab7-8bc2-20eb2fbbdf87"
-              projectId="e22a833b-af6b-4d8c-9fe5-515d6c1f17a7"
-              mintConfig={{ totalPrice: "0.01", _amount: "1" }}
-              environment="staging"
-              checkoutProps={{ paymentMethods: ["ETH", "SOL"] }}
-            />
+            <div className="bg-white p-4">
+              <Card className="p-4 w-full mb-3">
+                <div className="flex flex-col items-center gap-4">
+                  <h3 className="text-lg font-semibold">Select Quantity</h3>
+
+                  <div className="flex items-center gap-4">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={decrement}
+                      disabled={quantity <= 1}
+                      className="h-10 w-10"
+                    >
+                      <Minus className="h-4 w-4" />
+                    </Button>
+
+                    <span className="text-xl font-bold w-12 text-center">
+                      {quantity}
+                    </span>
+
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={increment}
+                      className="h-10 w-10"
+                    >
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+
+              <CrossmintPaymentElement
+                projectId="e22a833b-af6b-4d8c-9fe5-515d6c1f17a7"
+                collectionId="69b57982-b9d1-4ab7-8bc2-20eb2fbbdf87"
+                environment="staging"
+                cardWalletPaymentMethods={["apple-pay", "google-pay"]}
+                emailInputOptions={{
+                  show: true,
+                }}
+                mintConfig={{
+                  type: "erc-721",
+                  totalPrice: "0.01",
+                  _amount: quantity,
+                }}
+             
+              />
+            </div>
           </div>
         </div>
         <video autoPlay loop muted className="lg:w-[400px] w-[300px]">
@@ -159,7 +220,7 @@ export default function Mint() {
 
           <div className="col-span-1">
             <FeatureCard
-             iconSrc="/icon2.png"
+              iconSrc="/icon2.png"
               title="Token-gated Shopping Experience."
               description="Blanditiis dignissimos unde eos. Perferendis dolor quidem consequatur quia neque ipsum itaque optio in."
             />
@@ -167,7 +228,7 @@ export default function Mint() {
 
           <div className="col-span-1">
             <FeatureCard
-             iconSrc="/icon3.png"
+              iconSrc="/icon3.png"
               title="Artist Empowerment."
               description="Blanditiis dignissimos unde eos. Perferendis dolor quidem consequatur quia neque ipsum itaque optio in."
             />
@@ -175,7 +236,7 @@ export default function Mint() {
 
           <div className="col-span-1">
             <FeatureCard
-             iconSrc="/icon4.png"
+              iconSrc="/icon4.png"
               title="Sustainability & Social Cause."
               description="Blanditiis dignissimos unde eos. Perferendis dolor quidem consequatur quia neque ipsum itaque optio in."
             />

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CrossmintPaymentElement } from "@crossmint/client-sdk-react-ui";
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Card } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { Minus, Plus } from "lucide-react";
-
+import MintCounter from "./components/MintProgress";
 
 const FeatureCard = ({
   title = "Title 01",
@@ -54,8 +54,6 @@ const FAQ = ({
 export default function Mint() {
   const [quantity, setQuantity] = useState(1);
 
-
-
   const increment = () => {
     setQuantity((prev) => prev + 1);
   };
@@ -65,7 +63,6 @@ export default function Mint() {
       setQuantity((prev) => prev - 1);
     }
   };
-
 
   return (
     <div className="min-h-screen pb-[80px]">
@@ -86,7 +83,35 @@ export default function Mint() {
             porro.
           </div>
           <div className="flex flex-col gap-4 mt-3">
-            <div className="bg-white p-4">
+            <div className="max-w-[300px] mt-4 flex items-center gap-2">
+              <CrossmintPayButton
+                projectId="e22a833b-af6b-4d8c-9fe5-515d6c1f17a7"
+                collectionId="69b57982-b9d1-4ab7-8bc2-20eb2fbbdf87"
+                theme="dark"
+                
+                environment="staging"
+                mintConfig={{
+                  type: "erc-721",
+                  totalPrice: "0.01",
+                  _amount: quantity,
+                }}
+                className="xmint-btn"
+                getButtonText={(connecting) =>
+                  connecting ? "Connecting" : `Mint`
+                }
+              />
+
+              <div className="flex items-center gap-3 p-4  rounded-lg w-fit">
+                <div className="relative flex">
+                  <div className="w-3 h-3 bg-[#4CFF54] rounded-full animate-pulse"></div>
+                  <div className="absolute w-3 h-3 bg-[#4CFF54] rounded-full animate-ping"></div>
+                </div>
+                <span className="font-medium text-[#4CFF54]">Live</span>
+              </div>
+            </div>
+
+            <MintCounter/>
+            <div className="bg-white p-4 hidden">
               <Card className="p-4 w-full mb-3">
                 <div className="flex flex-col items-center gap-4">
                   <h3 className="text-lg font-semibold">Select Quantity</h3>
@@ -118,7 +143,7 @@ export default function Mint() {
                 </div>
               </Card>
 
-              <CrossmintPaymentElement
+              {/* <CrossmintPaymentElement
                 projectId="e22a833b-af6b-4d8c-9fe5-515d6c1f17a7"
                 collectionId="69b57982-b9d1-4ab7-8bc2-20eb2fbbdf87"
                 environment="staging"
@@ -131,8 +156,7 @@ export default function Mint() {
                   totalPrice: "0.01",
                   _amount: quantity,
                 }}
-             
-              />
+              /> */}
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { createAppKit } from '@reown/appkit/react'
@@ -22,7 +23,7 @@ const metadata = {
 }
 
 // 3. Set the networks
-const networks:any = [sepolia]
+export const networks:any = [sepolia]
 
 // 4. Create Wagmi Adapter
 const wagmiAdapter = new WagmiAdapter({

@@ -97,7 +97,7 @@ export default function Mint() {
                 }}
                 className="xmint-btn"
                 getButtonText={(connecting) =>
-                  connecting ? "Connecting" : `Mint`
+                  connecting ? "Connecting" : `Claim PdF Pass`
                 }
               />
 

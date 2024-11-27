@@ -5,7 +5,6 @@ import { createPublicClient, http } from "viem";
 
 const MintCounter = () => {
   const [totalSupply, setTotalSupply] = useState(0);
-  const MAX_SUPPLY = 5000;
 
   useEffect(() => {
     const fetchSupply = async () => {
@@ -33,12 +32,10 @@ const MintCounter = () => {
 
   return (
    <div className="flex items-center gap-2 font-['avenir']">
-     <span className="flex gap-1 text-base">
-      {totalSupply}
-      <span>/</span>
-      {MAX_SUPPLY}
+     <span className="flex text-base">
+     Current claim:
     </span>
-    <span>Potraits at 0.04 ETH each</span>
+    <span>{totalSupply} PdF Passes per claim at €0 each</span>
    </div>
   );
 };

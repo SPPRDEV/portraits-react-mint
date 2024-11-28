@@ -69,7 +69,7 @@ export default function Mint() {
       <div className="container mx-auto p-5 flex lg:flex-row flex-col items-center justify-between ">
         <div className="flex flex-col gap-2 max-w-lg">
           <div className="text-black text-2xl font-normal font-['Cardo']">
-            Minting.
+            PdF Pass Claim
           </div>
           <div className="w-full  text-gray-700 text-base font-normal font-['Avenir Next LT Pro'] leading-normal">
             Sit sit eius culpa eligendi neque laborum ex doloremque ut. In

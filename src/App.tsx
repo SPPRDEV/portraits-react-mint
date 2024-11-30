@@ -160,7 +160,7 @@ export default function Mint() {
             </div>
           </div>
         </div>
-        <video autoPlay loop muted className="lg:w-[400px] w-[300px]">
+        <video autoPlay loop muted className="lg:w-[500px] w-[400px]">
           <source src="/nft.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

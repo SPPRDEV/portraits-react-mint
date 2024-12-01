@@ -1,55 +1,55 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./components/ui/accordion";
+// import {
+//   Accordion,
+//   AccordionContent,
+//   AccordionItem,
+//   AccordionTrigger,
+// } from "./components/ui/accordion";
 import { useState } from "react";
 import { Card } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { Minus, Plus } from "lucide-react";
 import MintCounter from "./components/MintProgress";
 
-const FeatureCard = ({
-  title = "Title 01",
-  description = "Blanditiis dignissimos unde eos. Perferendis dolor quidem consequatur quia neque ipsum itaque optio in.",
-  iconSrc = "/star.png",
-  iconAlt = "Feature icon",
-}) => {
-  return (
-    <div className="flex gap-4 my-4">
-      <img src={iconSrc} alt={iconAlt} className="h-6 w-6 mt-1" />
-      <div className="flex flex-col items-start gap-2">
-        <div className="text-left md:text-center text-gray-800  text-base md:text-lg font-normal font-['Cardo']">
-          {title}
-        </div>
-        <div className="max-w-[250px] text-black  text-[14px] md:text-base font-normal font-['avenir'] leading-normal">
-          {description}
-        </div>
-      </div>
-    </div>
-  );
-};
+// const FeatureCard = ({
+//   title = "Title 01",
+//   description = "Blanditiis dignissimos unde eos. Perferendis dolor quidem consequatur quia neque ipsum itaque optio in.",
+//   iconSrc = "/star.png",
+//   iconAlt = "Feature icon",
+// }) => {
+//   return (
+//     <div className="flex gap-4 my-4">
+//       <img src={iconSrc} alt={iconAlt} className="h-6 w-6 mt-1" />
+//       <div className="flex flex-col items-start gap-2">
+//         <div className="text-left md:text-center text-gray-800  text-base md:text-lg font-normal font-['Cardo']">
+//           {title}
+//         </div>
+//         <div className="max-w-[250px] text-black  text-[14px] md:text-base font-normal font-['avenir'] leading-normal">
+//           {description}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
-const FAQ = ({
-  value,
-  title = "Illo animi rerum et quibusdam explicabo explicabo?",
-  description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-}: any) => {
-  return (
-    <AccordionItem value={value}>
-      <AccordionTrigger className="hover:no-underline">
-        <div className="py-4 flex items-center justify-start gap-6 hover:no-underline text-black text-[15px] font-normal font-['Cardo']">
-          <img src="/star.png" className="h-[20px] w-[20px]" />
-          {title}
-        </div>
-      </AccordionTrigger>
-      <AccordionContent>{description}</AccordionContent>
-    </AccordionItem>
-  );
-};
+// const FAQ = ({
+//   value,
+//   title = "Illo animi rerum et quibusdam explicabo explicabo?",
+//   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+// }: any) => {
+//   return (
+//     <AccordionItem value={value}>
+//       <AccordionTrigger className="hover:no-underline">
+//         <div className="py-4 flex items-center justify-start gap-6 hover:no-underline text-black text-[15px] font-normal font-['Cardo']">
+//           <img src="/star.png" className="h-[20px] w-[20px]" />
+//           {title}
+//         </div>
+//       </AccordionTrigger>
+//       <AccordionContent>{description}</AccordionContent>
+//     </AccordionItem>
+//   );
+// };
 
 export default function Mint() {
   const [quantity, setQuantity] = useState(1);
@@ -65,7 +65,7 @@ export default function Mint() {
   };
 
   return (
-    <div className="min-h-screen pb-[80px]">
+    <div className="h-auto">
       <div className="container mx-auto p-5 flex lg:flex-row flex-col items-center justify-between ">
         <div className="flex flex-col gap-2 max-w-lg">
           <div className="text-black text-2xl font-normal font-['Cardo']">
@@ -166,7 +166,7 @@ export default function Mint() {
         </video>
       </div>
 
-      <div className="container mx-auto mt-32">
+      {/* <div className="container mx-auto mt-32">
         <div className="text-center text-black text-2xl font-normal font-['Cardo']">
           Get Access To…
         </div>
@@ -266,7 +266,7 @@ export default function Mint() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

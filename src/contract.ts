@@ -1,10 +1,9 @@
-export const NFTCONTRACT = "0x004f54e1a9ec5b9c274e83b8e2664ca0e3324334";
+export const NFTCONTRACT = "0x4ab6822ca75ff11ca582587b13ef80fd1a4e49cf";
 export const ABI = [
   {
     inputs: [
       { internalType: "address", name: "_royaltyAddress", type: "address" },
       { internalType: "uint96", name: "_royaltyBips", type: "uint96" },
-      { internalType: "string", name: "_unRevealedUri", type: "string" },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
@@ -271,13 +270,6 @@ export const ABI = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "isRevealed",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [{ internalType: "uint256", name: "_amount", type: "uint256" }],
     name: "mint",
     outputs: [],
@@ -399,13 +391,6 @@ export const ABI = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "bool", name: "value", type: "bool" }],
-    name: "setReveal",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       { internalType: "address", name: "_receiver", type: "address" },
       { internalType: "uint96", name: "_royaltyFeeInBips", type: "uint96" },
@@ -432,15 +417,6 @@ export const ABI = [
   {
     inputs: [],
     name: "setSaleConfigToWLMint",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "string", name: "_unRevealedUri", type: "string" },
-    ],
-    name: "setUnRevealedUri",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

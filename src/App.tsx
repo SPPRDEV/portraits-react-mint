@@ -85,14 +85,14 @@ export default function Mint() {
           <div className="flex flex-col gap-4 mt-3">
             <div className="max-w-[300px] mt-4 flex items-center gap-2">
               <CrossmintPayButton
+                collectionId="5d54a6c0-da49-4c2c-b0f9-c09306a66871"
                 projectId="e22a833b-af6b-4d8c-9fe5-515d6c1f17a7"
-                collectionId="69b57982-b9d1-4ab7-8bc2-20eb2fbbdf87"
                 theme="dark"
                 
                 environment="staging"
                 mintConfig={{
                   type: "erc-721",
-                  totalPrice: "0.01",
+                  totalPrice: "0.02",
                   _amount: quantity,
                 }}
                 className="xmint-btn"

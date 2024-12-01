@@ -92,7 +92,7 @@ export default function Mint() {
                 environment="staging"
                 mintConfig={{
                   type: "erc-721",
-                  totalPrice: "0.02",
+                  totalPrice: "0.002",
                   _amount: quantity,
                 }}
                 className="xmint-btn"
